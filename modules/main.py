@@ -2150,10 +2150,10 @@ async def txt_handler(bot: Client, m: Message):
           Vxy = links[i][1].replace("file/d/", "uc?export=download&id=") \
             .replace("www.youtube-nocookie.com/embed", "youtu.be") \
             .replace("?modestbranding=1", "").replace("/view?usp=sharing", "")
-        url = "https://" + Vxy
-
-        # Process URL or other operations...
+        url = "https://" + V
         
+        # Process URL or other operations...
+       
    except Exception as e:  # Catch and log specific exceptions
      await m.reply_text(
         f"⌘ 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 𝐈𝐧𝐭𝐞𝐫𝐮𝐩𝐭𝐞𝐝\n\n⌘ 𝐍𝐚𝐦𝐞 » {name}\n⌘ 𝐋𝐢𝐧𝐤 » `{url}`\n\nError: {str(e)}"
