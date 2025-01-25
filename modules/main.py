@@ -2109,11 +2109,9 @@ try:
     raw_text = input1.text
 
     try:
-        arg = int(raw_text)
-    except:
-        arg = 0
-    
-
+       arg = int(raw_text)
+     except:
+       arg = 0
     
     editable2 = await m.reply_text("**Enter Token**")
     input5: Message = await bot.listen(editable.chat.id)
