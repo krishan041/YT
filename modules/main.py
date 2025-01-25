@@ -2107,18 +2107,15 @@ try:
     editable = await m.reply_text(f"Total links found are **{len(links)}**\n\nSend From where you want to download initial is **0**")
     input1: Message = await bot.listen(editable.chat.id)
     raw_text = input1.text
-
     try:
        arg = int(raw_text)
      except:
        arg = 0
-    
+         
     editable2 = await m.reply_text("**Enter Token**")
     input5: Message = await bot.listen(editable.chat.id)
     raw_text5 = input5.text    
-    
-
-        
+         
     if raw_text =='0':
         count =1
     else:       
