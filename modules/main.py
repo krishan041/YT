@@ -2154,18 +2154,18 @@ async def txt_handler(bot: Client, m: Message):
     path = f"./downloads/{m.chat.id}"
 
     try:    
-        with open(x, "r") as f:
-            content = f.read()
-        content = content.split("\n")
-        links = []
-        for i in content:
-            links.append(i.split(":", 1))
-        os.remove(x)
-        # print(len(links))
-    except:
-        await m.reply_text("Invalid file input.")
-        os.remove(x)
-        return
+       for i in range(arg - 1, len(links)):
+          Vxy = links[i][1].replace("file/d/", "uc?export=download&id=") \
+            .replace("www.youtube-nocookie.com/embed", "youtu.be") \
+            .replace("?modestbranding=1", "").replace("/view?usp=sharing", "")
+        url = "https://" + Vxy
+
+        # Process URL or other operations...
+        
+   except Exception as e:  # Catch and log specific exceptions
+     await m.reply_text(
+        f"⌘ 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 𝐈𝐧𝐭𝐞𝐫𝐮𝐩𝐭𝐞𝐝\n\n⌘ 𝐍𝐚𝐦𝐞 » {name}\n⌘ 𝐋𝐢𝐧𝐤 » `{url}`\n\nError: {str(e)}"
+    )
 
     editable = await m.reply_text(f"Total links found are **{len(links)}**\n\nSend From where you want to download initial is **0**")
     input1: Message = await bot.listen(editable.chat.id)
