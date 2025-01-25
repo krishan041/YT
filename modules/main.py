@@ -2090,7 +2090,7 @@ async def adda_pdf(bot: Client, m: Message):
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
-try:    
+     try:    
         with open(x, "r") as f:
             content = f.read()
         content = content.split("\n")
@@ -2099,9 +2099,12 @@ try:
             links.append(i.split(":", 1))
         os.remove(x)
         # print(len(links))
-
-    editable = await m.reply_text(f"Total links found are **{len(links)}**\n\nSend From where you want to download initial is **0**")
-    input1: Message = await bot.listen(editable.chat.id)
+     except:
+        await m.reply_text("Invalid file input.")
+        os.remove(x)
+        return
+    await editable.edit(f"Total links found are **{len(links)}**\n\nSend From where you want to download initial is **1**")
+   input1: Message = await bot.listen(editable.chat.id)
     raw_text = input1.text
     try:
        arg = int(raw_text)
