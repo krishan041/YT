@@ -1109,7 +1109,7 @@ async def cancel(_, m):
     await editable.edit("cancled")
     return
     
-@bot.on_message(filters.command(["restart"]) & filters.user(Config.OWNER_ID))
+@bot.on_message(filters.command(["restart"])
 async def restart_handler(_, m):
     await m.reply_text("Bot Restarted! ♻️", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
