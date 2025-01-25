@@ -1098,11 +1098,11 @@ async def txt_handler(bot: Client, m: Message):
     await m.reply_text("✨Thankyou For Choosing")
 
 @bot.on_message(filters.command(["help"]))
-async def help_handler(bot: Client, m: Message):
+async def txt_handler(bot: Client, m: Message):
     await m.reply_text(f"Hello Im TxT File Downloader\n\n**Steps To Use Bot:**\n **1:** Send /up_vid to Upload Videos in Streamable Formate & then Send Your .txt file.\n **2:** Now Send From Where You Want To    Download Initial is 0 .\n **3:** Now Send Your File Name or Use `de` For.  Use Default File Name.\n **4:** Now Send Resolution In Which Quality    You Want.\n **5:** Now Send Custom Thum URL or    Send `no` to Use Defalut Thumbnail.\n **6:** Now Wait Bot will Download & Upload Your Videos.\n\n**Bot made by {owner} & Updated By {channel} **")                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 @bot.on_message(filters.command(["cancel"]))
-async def cancel(_, m):
+async def txt_handler(bot: Client, m: Message):
     editable = await m.reply_text("Canceling All process Plz wait")
     global cancel
     cancel = True
@@ -1110,17 +1110,17 @@ async def cancel(_, m):
     return
     
 @bot.on_message(filters.command(["restart"]))
-async def restart_handler(_, m):
+async def txt_handler(bot: Client, m: Message):
     await m.reply_text("Bot Restarted! ♻️", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 @bot.on_message(filters.command(["start"]))
-async def account_login(bot: Client, m: Message):
+async def txt_handler(bot: Client, m: Message):
     editable = await m.reply_text("**Hi!, I'm PyroBot. I Can Download All Links In A Txt File & Send Them To You.\n\nUse /help To Get Some Help 😉\n\n Use /up_vid Command to Upload Videos in Streamable Formate & /up_dov to Upload In Document Formate!!!**")
 
 
 @bot.on_message(filters.command(["up_vid"]))
-async def account_login(bot: Client, m: Message):
+async def txt_handler(bot: Client, m: Message):
     editable = await m.reply_text("Send txt file Now**")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
@@ -1143,7 +1143,7 @@ async def account_login(bot: Client, m: Message):
         return
 
     editable = await m.reply_text(f"Total links found are **{len(links)}**\n\nSend From where you want to download initial is **0**")
-    input1: Message = await bot.listen(editable.chat.id)
+    input1: Message = await bot.listen
     raw_text = input1.text
 
     try:
@@ -1152,18 +1152,18 @@ async def account_login(bot: Client, m: Message):
         arg = 0
 
     editable = await m.reply_text("**Enter Title For File. Send 'De' To Use Default File Name.**")
-    input0: Message = await bot.listen(editable.chat.id)
+    input0: Message = await bot.listen
     raw_text0 = input0.text
     if raw_text0 == 'De':
         CR = raw_text0
 
     
     await m.reply_text("**Enter Resolution \nExamples: __480 = SD Quality\n             720 = HD Quality\n             1080 = FHD Quality__**")
-    input2: Message = await bot.listen(editable.chat.id)
+    input2: Message = await bot.listen
     raw_text2 = input2.text
         
     editable4= await m.reply_text("Now send the **Thumb url**\nEg : https://telegra.ph/file/d9e24878bd4abyhga05049a1.jpg\n\nElse Send **No**")
-    input6 = message = await bot.listen(editable.chat.id)
+    input6 = message = await bot.listen
     raw_text6 = input6.text
 
     thumb = input6.text
@@ -1432,7 +1432,7 @@ async def account_login(bot: Client, m: Message):
 
 
 @bot.on_message(filters.command(["up_doc"]))
-async def account_login(bot: Client, m: Message):
+async def txt_handler(bot: Client, m: Message):
     editable = await m.reply_text("Send txt file**")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
