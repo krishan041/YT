@@ -2090,7 +2090,7 @@ async def adda_pdf(bot: Client, m: Message):
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
-     try:    
+  try:    
         with open(x, "r") as f:
             content = f.read()
         content = content.split("\n")
